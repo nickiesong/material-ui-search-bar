@@ -1,6 +1,6 @@
 {
-  "name": "material-ui-search-bar",
-  "version": "0.4.0",
+  "name": "material-ui-search-bar-enhanced",
+  "version": "0.4.1",
   "description": "Material style search bar",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TeamWertarbyte/material-ui-search-bar.git"
+    "url": "git+https://github.com/filipvk/material-ui-search-bar.git"
   },
   "keywords": [
     "react",
@@ -23,12 +23,12 @@
     "search",
     "react-component"
   ],
-  "author": "Wertarbyte <kontakt@wertarbyte.com> (https://wertarbyte.com)",
+  "author": "Filip Veličković <filipvkovic@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TeamWertarbyte/material-ui-search-bar/issues"
+    "url": "https://github.com/filipvk/material-ui-search-bar/issues"
   },
-  "homepage": "https://github.com/TeamWertarbyte/material-ui-search-bar#readme",
+  "homepage": "https://github.com/filipvk/material-ui-search-bar#readme",
   "devDependencies": {
     "@webpack-blocks/babel6": "^0.4.1",
     "@webpack-blocks/postcss": "^0.4.3",
