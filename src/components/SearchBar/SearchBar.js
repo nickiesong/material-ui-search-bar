@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { AutoComplete, IconButton, Paper } from "material-ui";
-import SearchIcon from "material-ui/svg-icons/action/search";
-import CloseIcon from "material-ui/svg-icons/navigation/close";
-import { grey500 } from "material-ui/styles/colors";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { AutoComplete, IconButton, Paper } from 'material-ui';
+import SearchIcon from 'material-ui/svg-icons/action/search';
+import CloseIcon from 'material-ui/svg-icons/navigation/close';
+import { grey500 } from 'material-ui/styles/colors';
 
 const getStyles = (props, state) => {
   const { disabled, iconButtonStyle } = props;
@@ -13,41 +13,42 @@ const getStyles = (props, state) => {
   return {
     root: {
       height: 48,
-      display: "flex",
-      justifyContent: "space-between"
+      display: 'flex',
+      justifyContent: 'space-between',
     },
     iconButtonClose: {
       style: {
         opacity: !disabled ? 0.54 : 0.38,
-        transform: nonEmpty ? "scale(1, 1)" : "scale(0, 0)",
-        transition: "transform 200ms cubic-bezier(0.4, 0.0, 0.2, 1)",
-        ...iconButtonStyle
+        transform: nonEmpty ? 'scale(1, 1)' : 'scale(0, 0)',
+        transition: 'transform 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
+        ...iconButtonStyle,
       },
       iconStyle: {
         opacity: nonEmpty ? 1 : 0,
-        transition: "opacity 200ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-      }
+        transition: 'opacity 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
+      },
     },
     iconButtonSearch: {
       style: {
         opacity: !disabled ? 0.54 : 0.38,
-        transform: nonEmpty ? "scale(0, 0)" : "scale(1, 1)",
-        transition: "transform 200ms cubic-bezier(0.4, 0.0, 0.2, 1)",
+        transform: nonEmpty ? 'scale(0, 0)' : 'scale(1, 1)',
+        transition: 'transform 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
         marginRight: -48,
-        ...iconButtonStyle
+        ...iconButtonStyle,
       },
       iconStyle: {
         opacity: nonEmpty ? 0 : 1,
-        transition: "opacity 200ms cubic-bezier(0.4, 0.0, 0.2, 1)"
-      }
+        transition: 'opacity 200ms cubic-bezier(0.4, 0.0, 0.2, 1)',
+      },
     },
     input: {
-      width: "100%"
+      width: '100%',
+      webkitAppearance: 'none',
     },
     searchContainer: {
-      margin: "auto 16px",
-      width: "100%"
-    }
+      margin: 'auto 16px',
+      width: '100%',
+    },
   };
 };
 
@@ -61,7 +62,7 @@ export default class SearchBar extends Component {
     this.state = {
       focus: false,
       value: this.props.value,
-      active: false
+      active: false,
     };
   }
 
@@ -94,7 +95,7 @@ export default class SearchBar extends Component {
   handleBlur() {
     this.setState({ focus: false });
     if (this.state.value.trim().length === 0) {
-      this.setState({ value: "" });
+      this.setState({ value: '' });
     }
   }
 
@@ -104,8 +105,8 @@ export default class SearchBar extends Component {
   }
 
   handleCancel() {
-    this.setState({ active: false, value: "" }, () => this.props.onClear());
-    this.props.onChange("");
+    this.setState({ active: false, value: '' }, () => this.props.onClear());
+    this.props.onChange('');
   }
 
   handleKeyPressed(e) {
@@ -119,26 +120,19 @@ export default class SearchBar extends Component {
   render() {
     const styles = getStyles(this.props, this.state);
     const { value } = this.state;
-    const {
-      closeIcon,
-      disabled,
-      onRequestSearch,
-      searchIcon,
-      style,
-      ...inputProps
-    } = this.props;
+    const { closeIcon, disabled, onRequestSearch, searchIcon, style, ...inputProps } = this.props;
     delete inputProps.onClear;
     return (
       <Paper
         style={{
           ...styles.root,
-          ...style
+          ...style,
         }}
       >
         <div style={styles.searchContainer}>
-          <form action=".">
+          <form action='.'>
             <AutoComplete
-              type="search"
+              type='search'
               ref={ref => {
                 this.autoComplete = ref;
               }}
@@ -179,12 +173,12 @@ export default class SearchBar extends Component {
 SearchBar.defaultProps = {
   closeIcon: <CloseIcon color={grey500} />,
   dataSource: [],
-  dataSourceConfig: { text: "text", value: "value" },
+  dataSourceConfig: { text: 'text', value: 'value' },
   disabled: false,
-  hintText: "Search",
+  hintText: 'Search',
   searchIcon: <SearchIcon color={grey500} />,
-  value: "",
-  onClear: Function()
+  value: '',
+  onClear: Function(),
 };
 
 SearchBar.propTypes = {
@@ -211,5 +205,5 @@ SearchBar.propTypes = {
   /** Override the inline-styles of the root element. */
   style: PropTypes.object,
   /** The value of the text field. */
-  value: PropTypes.string
+  value: PropTypes.string,
 };
