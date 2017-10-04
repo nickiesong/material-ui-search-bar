@@ -11,7 +11,7 @@ See this component in [action](https://teamwertarbyte.github.io/material-ui-sear
 
 ## Installation
 ```shell
-npm i --save material-ui-search-bar
+npm i --save https://github.com/filipvk/material-ui-search-bar.git
 ```
 
 ## Usage
