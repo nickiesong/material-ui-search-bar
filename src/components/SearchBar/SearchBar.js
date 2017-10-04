@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { AutoComplete, IconButton, Paper } from 'material-ui';
+import { ClientStyle as Style } from 'react-css-component';
 import SearchIcon from 'material-ui/svg-icons/action/search';
 import CloseIcon from 'material-ui/svg-icons/navigation/close';
 import { grey500 } from 'material-ui/styles/colors';
@@ -51,6 +52,23 @@ const getStyles = (props, state) => {
     },
   };
 };
+
+const inlineStyle = `
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+input[type='search']::-ms-clear {
+  display: none;
+}
+
+input[type='search'] {
+  -webkit-appearance: none;
+}
+`;
 
 /**
  * Material design search bar
@@ -129,6 +147,7 @@ export default class SearchBar extends Component {
           ...style,
         }}
       >
+        <Style css={inlineStyle} />
         <div style={styles.searchContainer}>
           <form action='.'>
             <AutoComplete
