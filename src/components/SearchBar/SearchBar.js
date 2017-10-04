@@ -104,7 +104,7 @@ export default class SearchBar extends Component {
   }
 
   handleCancel () {
-    this.setState({active: false, value: ''})
+    this.setState({active: false, value: ''}, () => this.props.onClear())
     this.props.onChange('')
   }
 
