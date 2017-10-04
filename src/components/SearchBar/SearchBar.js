@@ -47,7 +47,7 @@ const getStyles = (props, state) => {
       webkitAppearance: 'none',
     },
     searchContainer: {
-      margin: 'auto 16px',
+      margin: 'auto 0 0 16px',
       width: '100%',
     },
   };
