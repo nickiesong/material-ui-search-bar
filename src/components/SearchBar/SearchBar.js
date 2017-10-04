@@ -46,6 +46,17 @@ const getStyles = (props, state) => {
       width: '100%',
       webkitAppearance: 'none',
     },
+    hintStyle: {
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      width: '100%',
+    },
+    inputStyle: {
+      position: 'absolute',
+      height: 'auto',
+      bottom: '12px',
+    },
     searchContainer: {
       margin: 'auto 0 0 16px',
       width: '100%',
@@ -162,6 +173,8 @@ export default class SearchBar extends Component {
               onFocus={() => this.handleFocus()}
               fullWidth
               style={styles.input}
+              hintStyle={styles.hintStyle}
+              inputStyle={styles.inputStyle}
               underlineShow={false}
               disabled={disabled}
               {...inputProps}
