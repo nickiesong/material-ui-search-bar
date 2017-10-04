@@ -56,6 +56,7 @@ const getStyles = (props, state) => {
       position: 'absolute',
       height: 'auto',
       bottom: '12px',
+      left: 0,
     },
     searchContainer: {
       margin: 'auto 0 0 16px',
