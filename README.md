@@ -1,7 +1,9 @@
-# Material Search Bar
+# Material Search Bar (Enhanced)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Build Status](https://travis-ci.org/TeamWertarbyte/material-ui-search-bar.svg?branch=master)](https://travis-ci.org/TeamWertarbyte/material-ui-search-bar)
 [![Greenkeeper badge](https://badges.greenkeeper.io/TeamWertarbyte/material-ui-search-bar.svg)](https://greenkeeper.io/)
+
+Enhanced version of Wertarbyte's Material Search Bar.
 
 ![Example](demo.gif)
 
@@ -39,6 +41,7 @@ render() {
 |hintText       | `string`  | `Search`| Sets hintText for the embedded [TextField](http://www.material-ui.com/#/components/text-field).
 |iconButtonStyle| `object ` | | Override the inline-styles of the button element.
 |onChange       | `function` |            | Fired when the text value changes.
+|onClear (New)  | `function` |            | Fired when the clear icon is clicked.
 |onRequestSearch       | `function` |            | Fired when the search icon is clicked.
 |searchIcon       | `node` | `<SearchIcon color={grey500} />`           | Override the search icon.
 |style       | `object` |            | Override the inline-styles of the root element.
