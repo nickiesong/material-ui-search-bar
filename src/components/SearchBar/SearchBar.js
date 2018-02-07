@@ -121,6 +121,7 @@ export default class SearchBar extends Component {
       closeIcon,
       disabled,
       onRequestSearch,
+      onClear,
       searchIcon,
       style,
       ...inputProps
