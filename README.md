@@ -24,6 +24,7 @@ render() {
     <SearchBar
       onChange={() => console.log('onChange')}
       onRequestSearch={() => console.log('onRequestSearch')}
+      onClear={() => console.log('onClear')}
       style={{
         margin: '0 auto',
         maxWidth: 800
