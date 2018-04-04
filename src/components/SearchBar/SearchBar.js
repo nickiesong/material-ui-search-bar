@@ -125,7 +125,7 @@ export default class SearchBar extends Component {
       style,
       ...inputProps
     } = this.props;
-
+    delete inputProps.onClear;
     return (
       <Paper
         style={{
