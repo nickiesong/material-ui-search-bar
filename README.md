@@ -16,7 +16,7 @@ npm i --save material-ui-search-bar-enhanced
 
 ## Usage
 ```js
-import SearchBar from 'material-ui-search-bar'
+import SearchBar from 'material-ui-search-bar-enhanced'
 
 // ...
 render() {
