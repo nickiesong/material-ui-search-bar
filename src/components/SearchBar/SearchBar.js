@@ -111,6 +111,7 @@ export default class SearchBar extends Component {
   handleKeyPressed(e) {
     if (e.charCode === 13) {
       e.preventDefault();
+      e.target.blur();
       this.props.onRequestSearch(e);
     }
   }
