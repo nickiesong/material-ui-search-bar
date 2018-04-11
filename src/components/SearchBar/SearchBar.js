@@ -110,6 +110,7 @@ export default class SearchBar extends Component {
 
   handleKeyPressed(e) {
     if (e.charCode === 13) {
+      e.preventDefault();
       this.props.onRequestSearch();
     }
   }
@@ -134,21 +135,24 @@ export default class SearchBar extends Component {
         }}
       >
         <div style={styles.searchContainer}>
-          <AutoComplete
-            ref={ref => {
-              this.autoComplete = ref;
-            }}
-            onBlur={() => this.handleBlur()}
-            searchText={value}
-            onUpdateInput={e => this.handleInput(e)}
-            onKeyPress={e => this.handleKeyPressed(e)}
-            onFocus={() => this.handleFocus()}
-            fullWidth
-            style={styles.input}
-            underlineShow={false}
-            disabled={disabled}
-            {...inputProps}
-          />
+          <form action=".">
+            <AutoComplete
+              type="search"
+              ref={ref => {
+                this.autoComplete = ref;
+              }}
+              onBlur={() => this.handleBlur()}
+              searchText={value}
+              onUpdateInput={e => this.handleInput(e)}
+              onKeyPress={e => this.handleKeyPressed(e)}
+              onFocus={() => this.handleFocus()}
+              fullWidth
+              style={styles.input}
+              underlineShow={false}
+              disabled={disabled}
+              {...inputProps}
+            />
+          </form>
         </div>
         <IconButton
           onClick={onRequestSearch}
