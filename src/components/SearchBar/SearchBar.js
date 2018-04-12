@@ -136,24 +136,21 @@ export default class SearchBar extends Component {
         }}
       >
         <div style={styles.searchContainer}>
-          <form action=".">
-            <AutoComplete
-              type="search"
-              ref={ref => {
-                this.autoComplete = ref;
-              }}
-              onBlur={() => this.handleBlur()}
-              searchText={value}
-              onUpdateInput={e => this.handleInput(e)}
-              onKeyPress={e => this.handleKeyPressed(e)}
-              onFocus={() => this.handleFocus()}
-              fullWidth
-              style={styles.input}
-              underlineShow={false}
-              disabled={disabled}
-              {...inputProps}
-            />
-          </form>
+          <AutoComplete
+            ref={ref => {
+              this.autoComplete = ref;
+            }}
+            onBlur={() => this.handleBlur()}
+            searchText={value}
+            onUpdateInput={e => this.handleInput(e)}
+            onKeyPress={e => this.handleKeyPressed(e)}
+            onFocus={() => this.handleFocus()}
+            fullWidth
+            style={styles.input}
+            underlineShow={false}
+            disabled={disabled}
+            {...inputProps}
+          />
         </div>
         <IconButton
           onClick={onRequestSearch}
